@@ -1,3 +1,48 @@
+
+# What is product catalog and category:
+
+![image](https://github.com/coder-1304/Training-Assignment/assets/121802518/8f03ff7d-bb67-4883-88c0-c8aa76073569)
+
+### Product Catalog
+* **Purpose:** A product catalog is the way of presenting product information in an organized way. It is  the collection of categories and each category holds a set of products.
+* **Entity**: ProdCatalog
+* **Key Attribute**: prodCatalogId
+
+### Product Category
+The classification of products is the key aspect of maintaining product information.
+
+* **Purpose:** A product category is a way of organizing similar or related items for sale into groups or sections. It helps customers navigate through a large assortment of products more easily by grouping them based on common characteristics
+* **Entity**: ProductCategory
+* **Key Attributes**: productCategoryId, productCategoryTypeId, categoryName
+
+#### Product Category Types
+It stores the possible types of categories in which products can be classified.
+
+Examples:
+- CATALOG_CATEGORY
+- INDUSTRY_CATEGORY
+- MATERIALS_CATEGORY
+  
+* **Entity**: ProductCategoryType
+* **Key Attribute**: productCategoryTypeId, parentTypeId, description
+* **Relationship with Product Category**: one-to-one   Foreign Key: ProductCategory(productCategoryTypeId)
+* **Recursive Relationship** one-to-many - Foreign Key: parentTypeId
+
+### Product Category Rollup
+* **Purpose:** A join entity that allows product category to be made up of many other categories (child category) as well as child category to be in a different parent categories. It is used to store a hierarchical structure of categories.
+* **Entity**: ProductCategoryRollup
+* **Key Attributes**: productCategoryId, parentProductCategoryId, fromDate
+
+### Product Catalog Category
+This is 
+
+* **Purpose:** A product category is a way of organizing similar or related items for sale into groups or sections. It helps customers navigate through a large assortment of products more easily by grouping them based on common characteristics
+* **Key Entity**: ProductCategory
+* **Key Attributes**: productCategoryId, productCategoryTypeId, categoryName
+
+
+
+
 # This document contains information about various categories and their types for developing an e-commerce application, also considering the purpose of them.
 
 * Browse Root Category
