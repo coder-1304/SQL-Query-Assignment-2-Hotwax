@@ -33,18 +33,28 @@ Examples:
 * **Entity**: ProductCategoryRollup
 * **Key Attributes**: productCategoryId, parentProductCategoryId, fromDate
 
+### Product Category Member
+* **Purpose:** A join entity that associates product to different product categories.
+* **Entity**: ProductCategoryMember
+* **Key Attributes**: productCategoryId, productId, fromDate
+
+  ![image](https://github.com/coder-1304/Training-Assignment/assets/121802518/4f0cce43-c1e3-4d8e-acf4-a3a2d5641a00)
+
 ### Product Catalog Category
-This is 
+* **Purpose:** A join entity that associates categories to a catlog.
+* **Entity**: ProdCatalogCategory
+* **Key Attributes**: prodCatalogId, productCategoryId, prodCatalogCategoryTypeId, fromDate
 
-* **Purpose:** A product category is a way of organizing similar or related items for sale into groups or sections. It helps customers navigate through a large assortment of products more easily by grouping them based on common characteristics
-* **Key Entity**: ProductCategory
-* **Key Attributes**: productCategoryId, productCategoryTypeId, categoryName
-
-
+![image](https://github.com/coder-1304/Training-Assignment/assets/121802518/699a98bb-0f79-4c0e-a51a-2ecb169918ed)
 
 
-# This document contains information about various categories and their types for developing an e-commerce application, also considering the purpose of them.
 
+### Product Catalog Category Type
+* **Purpose:** A catalog itself can have various types of categories associated with it. Product Catalog Category Type to filter out which type of category is associated wheather it is browser root category, a promotion category or most popular category.
+* **Entity**: ProdCatalogCategoryType
+* **Key Attributes**: prodCatalogCategoryTypeId
+
+Example:
 * Browse Root Category
 * Search Category
 * View Allow Category
