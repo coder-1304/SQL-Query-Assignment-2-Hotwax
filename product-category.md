@@ -72,21 +72,68 @@ public static String getCatalogTopCategoryId(ServletRequest request, String prod
 Demo Setup: Sample data given to get an idea about how Browse Root Category is associated with catalog and other categories.
 Association of catalog with "BROWSE_ROOT" category
 
-```
-<ProductCategory productCategoryId="BROWSE_ROOT" productCategoryTypeId="CATALOG_CATEGORY" categoryName="Browse Root" longDescription="Primary Browse Root Category" description="Browse Root"/>
-<ProdCatalogCategory prodCatalogId="WFI_CATALOG" productCategoryId="BROWSE_ROOT" fromDate="2001-05-15 12:00:00.0" sequenceNum="1" prodCatalogCategoryTypeId="PCCT_BROWSE_ROOT"/>
+```xml
+<ProductCategory
+    productCategoryId="BROWSE_ROOT" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    categoryName="Browse Root" 
+    longDescription="Primary Browse Root Category" 
+    description="Browse Root"
+/>
+<ProdCatalogCategory 
+    prodCatalogId="WFI_CATALOG" 
+    productCategoryId="BROWSE_ROOT" 
+    fromDate="2001-05-15 12:00:00.0" 
+    sequenceNum="1" 
+    prodCatalogCategoryTypeId="PCCT_BROWSE_ROOT"
+/>
 ```
 
 Association of other categories with "BROWSE_ROOT" category
 
-```
-<ProductCategory productCategoryId="4999" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="BROWSE_ROOT" description="Food" categoryName="Food" productCategoryUrlName="survival-food"/>
-<ProductCategory productCategoryId="5004" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="BROWSE_ROOT" description="Water" categoryName="Water" productCategoryUrlName="water-filters"/>
-<ProductCategory productCategoryId="5005" productCategoryTypeId="CATALOG_CATEGORY" primaryParentCategoryId="BROWSE_ROOT" description="Power" categoryName="Power" productCategoryUrlName="portable-solar-power"/>
-
-<ProductCategoryRollup fromDate="2001-05-15 12:00:00.0" parentProductCategoryId="BROWSE_ROOT" productCategoryId="4999" sequenceNum="1"/>
-<ProductCategoryRollup fromDate="2001-05-15 12:00:00.0" parentProductCategoryId="BROWSE_ROOT" productCategoryId="5004" sequenceNum="2"/>
-<ProductCategoryRollup fromDate="2001-05-15 12:00:00.0" parentProductCategoryId="BROWSE_ROOT" productCategoryId="5005" sequenceNum="3"/>
+```xml
+<ProductCategory
+    productCategoryId="4999" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    primaryParentCategoryId="BROWSE_ROOT" 
+    description="Food" 
+    categoryName="Food" 
+    productCategoryUrlName="survival-food"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-15 12:00:00.0" 
+    parentProductCategoryId="BROWSE_ROOT" 
+    productCategoryId="4999" 
+    sequenceNum="1"
+/>
+<ProductCategory 
+    productCategoryId="5004" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    primaryParentCategoryId="BROWSE_ROOT" 
+    description="Water" 
+    categoryName="Water" 
+    productCategoryUrlName="water-filters"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-15 12:00:00.0" 
+    parentProductCategoryId="BROWSE_ROOT" 
+    productCategoryId="5004" 
+    sequenceNum="2"
+/>
+<ProductCategory 
+    productCategoryId="5005" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    primaryParentCategoryId="BROWSE_ROOT" 
+    description="Power" 
+    categoryName="Power" 
+    productCategoryUrlName="portable-solar-power"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-15 12:00:00.0" 
+    parentProductCategoryId="BROWSE_ROOT" 
+    productCategoryId="5005" 
+    sequenceNum="3"
+/>
 ```
 
 **Additional Notes**
@@ -106,13 +153,31 @@ TO DO
 **Demo Setup:** Sample data given to get an idea about how Search Category is associated with other category and member products.
 Association of catalog with "CATALOG_SEARCH" category
 
-```
-<ProductCategory productCategoryId="CATALOG_SEARCH" productCategoryTypeId="SEARCH_CATEGORY" categoryName="Default Search" description="Default Search" longDescription="Only the products belonging to Catalog Search category will be searched"/>
-<ProdCatalogCategory prodCatalogId="WFI_CATALOG" productCategoryId="CATALOG_SEARCH" fromDate="2001-05-15 12:00:00.0" sequenceNum="1" prodCatalogCategoryTypeId="PCCT_SEARCH"/>
-
-Association of products with "CATALOG_SEARCH" category
-<ProductCategoryMember productCategoryId="CATALOG_SEARCH" productId="9000" fromDate="2001-05-13 12:00:00.0"/>
-<ProductCategoryMember productCategoryId="CATALOG_SEARCH" productId="9001" fromDate="2001-05-13 12:00:00.0"/>
+```xml
+<ProductCategory 
+    productCategoryId="CATALOG_SEARCH" 
+    productCategoryTypeId="SEARCH_CATEGORY" 
+    categoryName="Default Search" 
+    description="Default Search" 
+    longDescription="Only the products belonging to Catalog Search category will be searched"
+/>
+<ProdCatalogCategory 
+    prodCatalogId="WFI_CATALOG" 
+    productCategoryId="CATALOG_SEARCH" 
+    fromDate="2001-05-15 12:00:00.0" 
+    sequenceNum="1" 
+    prodCatalogCategoryTypeId="PCCT_SEARCH"
+/>
+<ProductCategoryMember 
+    productCategoryId="CATALOG_SEARCH" 
+    productId="9000" 
+    fromDate="2001-05-13 12:00:00.0"
+/>
+<ProductCategoryMember 
+    productCategoryId="CATALOG_SEARCH" 
+    productId="9001" 
+    fromDate="2001-05-13 12:00:00.0"
+/>
 ```
 **Additional Notes**
 Sequence number in Product Category Member depicts the order in which the products will be displayed on front store.
@@ -128,13 +193,31 @@ To Do
 **Demo Setup:** Sample data given to get an idea about how View Allow Category is associated with other categories and member products.
 Association of catalog with "VIEW_ALLOW" category
 
-```
-<ProductCategory productCategoryId="VIEW_ALLOW" productCategoryTypeId="CATALOG_CATEGORY" categoryName="View Allow"/>
-<ProdCatalogCategory prodCatalogId="WFI_CATALOG" productCategoryId="VIEW_ALLOW" fromDate="2001-05-15 12:00:00.0" sequenceNum="1" prodCatalogCategoryTypeId="PCCT_VIEW_ALLOW"/>
-
-Sample data to demonstrate association of products with "VIEW_ALLOW" category
-<ProductCategoryMember productCategoryId="VIEW_ALLOW" productId="9000" fromDate="2001-05-13 12:00:00.0" sequenceNum="1"/>
-<ProductCategoryMember productCategoryId="VIEW_ALLOW" productId="9001" fromDate="2001-05-13 12:00:00.0" sequenceNum="2"/>
+```xml
+<ProductCategory 
+    productCategoryId="VIEW_ALLOW" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    categoryName="View Allow"
+/>
+<ProdCatalogCategory 
+    prodCatalogId="WFI_CATALOG" 
+    productCategoryId="VIEW_ALLOW" 
+    fromDate="2001-05-15 12:00:00.0" 
+    sequenceNum="1" 
+    prodCatalogCategoryTypeId="PCCT_VIEW_ALLOW"
+/>
+<ProductCategoryMember 
+    productCategoryId="VIEW_ALLOW" 
+    productId="9000" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="1"
+/>
+<ProductCategoryMember 
+    productCategoryId="VIEW_ALLOW" 
+    productId="9001" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="2"
+/>
 ```
 
 **Additional Notes**
@@ -153,13 +236,32 @@ To Do
 **Demo Setup:** Sample data given to get an idea about how Purchase Allow Category is associated with other categories and member products.
 Association of catalog with "PURCHASE_ALLOW" category
 
-```
-<ProductCategory productCategoryId="PURCHASE_ALLOW" productCategoryTypeId="CATALOG_CATEGORY" categoryName="Purchase Allow"/>
-<ProdCatalogCategory prodCatalogId="WFI_CATALOG" productCategoryId="PURCHASE_ALLOW" fromDate="2001-05-15 12:00:00.0" sequenceNum="1" prodCatalogCategoryTypeId="PCCT_PURCHASE_ALLOW"/>
+```xml
+<ProductCategory 
+    productCategoryId="PURCHASE_ALLOW" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    categoryName="Purchase Allow"
+/>
+<ProdCatalogCategory 
+    prodCatalogId="WFI_CATALOG" 
+    productCategoryId="PURCHASE_ALLOW" 
+    fromDate="2001-05-15 12:00:00.0" 
+    sequenceNum="1" 
+    prodCatalogCategoryTypeId="PCCT_PURCHASE_ALLOW"
+/>
+<ProductCategoryMember 
+    productCategoryId="PURCHASE_ALLOW" 
+    productId="9000" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="1"
+/>
+<ProductCategoryMember 
+    productCategoryId="PURCHASE_ALLOW" 
+    productId="9001" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="2"
+/>
 
-Association of products with "PURCHASE_ALLOW" category
-<ProductCategoryMember productCategoryId="PURCHASE_ALLOW" productId="9000" fromDate="2001-05-13 12:00:00.0" sequenceNum="1"/>
-<ProductCategoryMember productCategoryId="PURCHASE_ALLOW" productId="9001" fromDate="2001-05-13 12:00:00.0" sequenceNum="2"/>
 ```
 **Additional Notes**
 
@@ -178,26 +280,84 @@ To Do
 Demo Setup: Sample data given to get an idea about the how tax categories are associated with tax authorities along with tax percent rate.
 
 Tax category association with tax authorities along with tax percent rate
-```
-<ProductCategory productCategoryId="FOOD_TAX_CATEGORY" categoryName="Tax Food Products" productCategoryTypeId="TAX_CATEGORY"/>
-<ProductCategory productCategoryId="WATER_TAX_CATEGORY" categoryName="Tax Water Products" productCategoryTypeId="TAX_CATEGORY"/>
+```xml
+<ProductCategory 
+    productCategoryId="FOOD_TAX_CATEGORY" 
+    categoryName="Tax Food Products" 
+    productCategoryTypeId="TAX_CATEGORY"
+/>
+<ProductCategory 
+    productCategoryId="WATER_TAX_CATEGORY" 
+    categoryName="Tax Water Products" 
+    productCategoryTypeId="TAX_CATEGORY"
+/>
 
-<Party partyId="UT_TAXMAN" partyTypeId="PARTY_GROUP"/>
-<PartyRole partyId="UT_TAXMAN" roleTypeId="TAX_AUTHORITY"/>
-<PartyGroup partyId="UT_TAXMAN" groupName="Utah Sales Tax Authority"/>
+<Party 
+    partyId="UT_TAXMAN" 
+    partyTypeId="PARTY_GROUP"
+/>
+<PartyRole 
+    partyId="UT_TAXMAN" 
+    roleTypeId="TAX_AUTHORITY"
+/>
+<PartyGroup 
+    partyId="UT_TAXMAN" 
+    groupName="Utah Sales Tax Authority"
+/>
 
-<TaxAuthority taxAuthGeoId="UT" taxAuthPartyId="UT_TAXMAN" includeTaxInPrice="N"/>
+<TaxAuthority 
+    taxAuthGeoId="UT" 
+    taxAuthPartyId="UT_TAXMAN" 
+    includeTaxInPrice="N"
+/>
 
 <!--Tax rate for food category products-->
-<TaxAuthorityCategory taxAuthGeoId="UT" taxAuthPartyId="UT_TAXMAN" productCategoryId="FOOD_TAX_CATEGORY"/>
-<TaxAuthorityRateProduct taxAuthorityRateSeqId="9002" taxAuthGeoId="UT" taxAuthPartyId="UT_TAXMAN" taxAuthorityRateTypeId="SALES_TAX" productStoreId="9000"
-productCategoryId="FOOD_TAX_CATEGORY" titleTransferEnumId="" minItemPrice="0.00" minPurchase="0.00" taxShipping="N" taxPercentage="3.00" taxPromotions="N" fromDate="2001-05-13 00:00:00.001" thruDate="" description="Tax Applicable for Food Category Products"/>
+<TaxAuthorityCategory 
+    taxAuthGeoId="UT" 
+    taxAuthPartyId="UT_TAXMAN" 
+    productCategoryId="FOOD_TAX_CATEGORY"
+/>
+<TaxAuthorityRateProduct 
+    taxAuthorityRateSeqId="9002" 
+    taxAuthGeoId="UT" 
+    taxAuthPartyId="UT_TAXMAN" 
+    taxAuthorityRateTypeId="SALES_TAX" 
+    productStoreId="9000"
+    productCategoryId="FOOD_TAX_CATEGORY" 
+    titleTransferEnumId="" 
+    minItemPrice="0.00" 
+    minPurchase="0.00" 
+    taxShipping="N" 
+    taxPercentage="3.00" 
+    taxPromotions="N" 
+    fromDate="2001-05-13 00:00:00.001" 
+    thruDate="" 
+    description="Tax Applicable for Food Category Products"
+/>
 
 <!--Tax rate for water category products-->
-<TaxAuthorityCategory taxAuthGeoId="UT" taxAuthPartyId="UT_TAXMAN" productCategoryId="WATER_TAX_CATEGORY"/>
-<TaxAuthorityRateProduct taxAuthorityRateSeqId="9003" taxAuthGeoId="UT" taxAuthPartyId="UT_TAXMAN" taxAuthorityRateTypeId="SALES_TAX" productStoreId="9000"
-productCategoryId="WATER_TAX_CATEGORY" titleTransferEnumId="" minItemPrice="0.00" minPurchase="0.00" taxShipping="N" taxPercentage="5.00" taxPromotions="N"
-fromDate="2001-05-13 00:00:00.001" thruDate="" description="Tax Applicable for Water Category Products"/>
+<TaxAuthorityCategory 
+    taxAuthGeoId="UT" 
+    taxAuthPartyId="UT_TAXMAN" 
+    productCategoryId="WATER_TAX_CATEGORY"
+/>
+<TaxAuthorityRateProduct 
+    taxAuthorityRateSeqId="9003" 
+    taxAuthGeoId="UT" 
+    taxAuthPartyId="UT_TAXMAN" 
+    taxAuthorityRateTypeId="SALES_TAX" 
+    productStoreId="9000"
+    productCategoryId="WATER_TAX_CATEGORY" 
+    titleTransferEnumId="" 
+    minItemPrice="0.00" 
+    minPurchase="0.00" 
+    taxShipping="N" 
+    taxPercentage="5.00" 
+    taxPromotions="N" 
+    fromDate="2001-05-13 00:00:00.001" 
+    thruDate="" 
+    description="Tax Applicable for Water Category Products"
+/>
 ```
 
 ### Promotions Category
@@ -211,17 +371,51 @@ To Do
 Demo Setup: Sample data given to get an idea about how products and categories are associated with Promotions Category in system.
 
 Association of categories with PROMOTIONS category
-```
-<ProductCategory productCategoryId="PROMOTIONS" productCategoryTypeId="CATALOG_CATEGORY" categoryName="Special Offer"/>
-<ProdCatalogCategory prodCatalogId="WFI_CATALOG" productCategoryId="PROMOTIONS" fromDate="2001-05-13 12:00:00.0" sequenceNum="1" prodCatalogCategoryTypeId="PCCT_PROMOTIONS"/>
+```xml
+<ProductCategory 
+    productCategoryId="PROMOTIONS" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    categoryName="Special Offer"
+/>
+<ProdCatalogCategory 
+    prodCatalogId="WFI_CATALOG" 
+    productCategoryId="PROMOTIONS" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="1" 
+    prodCatalogCategoryTypeId="PCCT_PROMOTIONS"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="PROMOTIONS" 
+    productCategoryId="4999" 
+    sequenceNum="1"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="PROMOTIONS" 
+    productCategoryId="5004" 
+    sequenceNum="2"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="PROMOTIONS" 
+    productCategoryId="5005" 
+    sequenceNum="3"
+/>
 
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="PROMOTIONS" productCategoryId="4999" sequenceNum="1"/>
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="PROMOTIONS" productCategoryId="5004" sequenceNum="2"/>
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="PROMOTIONS" productCategoryId="5005" sequenceNum="3"/>
-
-Sample data to demonstrate association of products with PROMOTIONS category
-<ProductCategoryMember productCategoryId="PROMOTIONS" productId="9021" fromDate="2001-05-13 12:00:00.0" sequenceNum="1"/>
-<ProductCategoryMember productCategoryId="PROMOTIONS" productId="9000" fromDate="2001-05-13 12:00:00.0" sequenceNum="2"/>
+<!-- Sample data to demonstrate association of products with PROMOTIONS category -->
+<ProductCategoryMember 
+    productCategoryId="PROMOTIONS" 
+    productId="9021" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="1"
+/>
+<ProductCategoryMember 
+    productCategoryId="PROMOTIONS" 
+    productId="9000" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="2"
+/>
 ```
 
 Additional Notes
@@ -242,17 +436,51 @@ To Do
 Demo Setup: Sample data given to get an idea about how Most Popular Category is associated with other categories and member products.
 
 Association of other categories with "MOST_POPULAR" category
-```
-<ProductCategory productCategoryId="MOST_POPULAR" productCategoryTypeId="CATALOG_CATEGORY" categoryName="Most Popular"/>
-<ProdCatalogCategory prodCatalogId="WFI_CATALOG" productCategoryId="MOST_POPULAR" fromDate="2001-05-15 12:00:00.0" sequenceNum="1" prodCatalogCategoryTypeId="PCCT_MOST_POPULAR"/>
+```xml
+<ProductCategory 
+    productCategoryId="MOST_POPULAR" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    categoryName="Most Popular"
+/>
+<ProdCatalogCategory 
+    prodCatalogId="WFI_CATALOG" 
+    productCategoryId="MOST_POPULAR" 
+    fromDate="2001-05-15 12:00:00.0" 
+    sequenceNum="1" 
+    prodCatalogCategoryTypeId="PCCT_MOST_POPULAR"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="MOST_POPULAR" 
+    productCategoryId="4999" 
+    sequenceNum="1"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="MOST_POPULAR" 
+    productCategoryId="5004" 
+    sequenceNum="2"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="MOST_POPULAR" 
+    productCategoryId="5005" 
+    sequenceNum="3"
+/>
 
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="MOST_POPULAR" productCategoryId="4999" sequenceNum="1"/>
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="MOST_POPULAR" productCategoryId="5004" sequenceNum="2"/>
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="MOST_POPULAR" productCategoryId="5005" sequenceNum="3"/>
-
-	Association of products with "MOST_POPULAR" category
-<ProductCategoryMember productCategoryId="MOST_POPULAR" productId="9000" fromDate="2001-05-13 12:00:00.0" sequenceNum="1"/>
-<ProductCategoryMember productCategoryId="MOST_POPULAR" productId="9001" fromDate="2001-05-13 12:00:00.0" sequenceNum="2"/>
+<!-- Association of products with "MOST_POPULAR" category -->
+<ProductCategoryMember 
+    productCategoryId="MOST_POPULAR" 
+    productId="9000" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="1"
+/>
+<ProductCategoryMember 
+    productCategoryId="MOST_POPULAR" 
+    productId="9001" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="2"
+/>
 ```
 
 Additional Notes
@@ -276,17 +504,52 @@ To Do
 Demo Setup: Sample data given to get an idea about how What's New Category is associated with other categories and member products.
 
 Association of other categories with "WHATS_NEW" category
-```
-<ProductCategory productCategoryId="WHATS_NEW" productCategoryTypeId="CATALOG_CATEGORY" categoryName="Whats New"/>
-<ProdCatalogCategory prodCatalogId="WFI_CATALOG" productCategoryId="WHATS_NEW" fromDate="2001-05-15 12:00:00.0" sequenceNum="1" prodCatalogCategoryTypeId="PCCT_WHATS_NEW"/>
+```xml
+<ProductCategory 
+    productCategoryId="WHATS_NEW" 
+    productCategoryTypeId="CATALOG_CATEGORY" 
+    categoryName="Whats New"
+/>
+<ProdCatalogCategory 
+    prodCatalogId="WFI_CATALOG" 
+    productCategoryId="WHATS_NEW" 
+    fromDate="2001-05-15 12:00:00.0" 
+    sequenceNum="1" 
+    prodCatalogCategoryTypeId="PCCT_WHATS_NEW"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="WHATS_NEW" 
+    productCategoryId="4999" 
+    sequenceNum="1"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="WHATS_NEW" 
+    productCategoryId="5004" 
+    sequenceNum="2"
+/>
+<ProductCategoryRollup 
+    fromDate="2001-05-13 12:00:00.0" 
+    parentProductCategoryId="WHATS_NEW" 
+    productCategoryId="5005" 
+    sequenceNum="3"
+/>
 
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="WHATS_NEW" productCategoryId="4999" sequenceNum="1"/>
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="WHATS_NEW" productCategoryId="5004" sequenceNum="2"/>
-<ProductCategoryRollup fromDate="2001-05-13 12:00:00.0" parentProductCategoryId="WHATS_NEW" productCategoryId="5005" sequenceNum="3"/>
+<!-- Association of products with "WHATS_NEW" category -->
+<ProductCategoryMember 
+    productCategoryId="WHATS_NEW" 
+    productId="9000" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="1"
+/>
+<ProductCategoryMember 
+    productCategoryId="WHATS_NEW" 
+    productId="9001" 
+    fromDate="2001-05-13 12:00:00.0" 
+    sequenceNum="2"
+/>
 
-Association of products with "WHATS_NEW" category
-<ProductCategoryMember productCategoryId="WHATS_NEW" productId="9000" fromDate="2001-05-13 12:00:00.0" sequenceNum="1"/>
-<ProductCategoryMember productCategoryId="WHATS_NEW" productId="9001" fromDate="2001-05-13 12:00:00.0" sequenceNum="2"/>
 ```
 Additional Notes
 
