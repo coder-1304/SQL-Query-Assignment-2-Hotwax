@@ -260,6 +260,8 @@
     shipGroupSeqId="00001"
 /> 
 
+<!-- Order Adjustment -->
+
 <!-- Email Address -->
 
 <ContactMech 
@@ -330,6 +332,22 @@
     contactMechId="CM1002" 
     contactMechPurposeTypeId="SHIPPING_LOCATION" 
     orderId="ODR100"
+/>
+
+<!-- Payment -->
+
+<PaymentMethodType 
+    description="Shopify Payment" 
+    paymentMethodTypeId="EXT_SHOPIFY"
+/>
+
+<OrderPaymentPreference 
+    orderPaymentPreferenceId="OPM1000" 
+    paymentMethodTypeId="EXT_SHOPIFY"
+    orderId="ODR100" 
+    orderItemSeqId="00001" 
+    shipGroupSeqId="1" 
+    statusId="PAYMENT_AUTHORIZED"
 />
 
 </entity-engine-xml>
