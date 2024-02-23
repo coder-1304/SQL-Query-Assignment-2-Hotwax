@@ -18,6 +18,7 @@
     lastName="Pahwa" 
     partyId="10010"
     createdStamp= "2024-01-19T04:06:05-05:00"
+    lastUpdatedStamp= "2024-02-12T06:11:22-05:00"
 /> 
 
 <!-- Default address - general correspondence address -->
@@ -50,6 +51,27 @@
     fromDate="2024-02-15 00:00:00.0" 
     partyId="10010"
 /> 
+
+<!-- Email Address -->
+
+<ContactMech 
+    contactMechId="CM1000" 
+    contactMechTypeId="EMAIL_ADDRESS" 
+    infoString="customer@example.com" 
+/>
+
+<PartyContactMech 
+    contactMechId="CM1000" 
+    partyId="10010"
+    fromDate="2024-02-08 18:19:08.508" 
+/>
+
+<PartyContactMechPurpose 
+    contactMechId="CM1000" 
+    contactMechPurposeTypeId="PRIMARY_EMAIL" 
+    fromDate="2024-02-15 00:00:00.0" 
+    partyId="10010"
+/>
 
 <!-- Product -->
 
@@ -141,33 +163,6 @@
     fromDate="2004-08-20 12:55:36.479"
 />
 
-
-<!-- Vendor -->
-
-<Party 
-    partyId="ven-hotwax" 
-    partyTypeId="LEGAL_ORGANIZATION"
-/>
-
-<Vendor 
-    partyId="ven-hotwax"
-    manifestCompanyName="Hotwax" 
-    manifestCompanyTitle="Hotwax" 
-/> 
-
-<PartyRole 
-    partyId="ven-hotwax" 
-    roleTypeId="VENDOR"
-/> 
-
-<!-- Associating product with vendor -->
-
-<VendorProduct 
-    productId="BSK-S" 
-    productStoreGroupId="_NA_" 
-    vendorPartyId="ven-hotwax"
-/> 
-
 <!-- Creating Order -->
 
 <OrderHeader 
@@ -221,6 +216,32 @@
     statusId="ORDER_APPROVED" 
 />
 
+<!-- Vendor -->
+
+<Party 
+    partyId="ven-hotwax" 
+    partyTypeId="LEGAL_ORGANIZATION"
+/>
+
+<Vendor 
+    partyId="ven-hotwax"
+    manifestCompanyName="Hotwax" 
+    manifestCompanyTitle="Hotwax" 
+/> 
+
+<PartyRole 
+    partyId="ven-hotwax" 
+    roleTypeId="VENDOR"
+/> 
+
+<!-- Associating product with vendor -->
+
+<VendorProduct 
+    productId="BSK-S" 
+    vendorPartyId="ven-hotwax"
+    productStoreGroupId="_NA_" 
+/> 
+
 <!-- Creating preorder facility -->
 
 <FacilityType 
@@ -237,11 +258,13 @@
 
 <OrderItemShipGroup 
     orderId="ODR100" 
-    carrierPartyId="FEDEX" 
-    carrierRoleTypeId="CARRIER" 
+    shipGroupSeqId="1" 
+    facilityId="PREORDER_PARKING"
+    vendorPartyId="ven-hotwax"
     shipmentMethodTypeId="GROUND"
     contactMechId="CM1001" 
-    shipGroupSeqId="1" 
+    carrierPartyId="FEDEX" 
+    carrierRoleTypeId="CARRIER" 
 /> 
  
 <OrderItemShipGroupAssoc 
@@ -251,30 +274,16 @@
     shipGroupSeqId="1"
 /> 
 
+<!-- Order Adjustment -->
+
 <OrderAdjustment 
-    orderId="ODR100" 
     orderAdjustmentId="8011" 
+    orderId="ODR100" 
     orderItemSeqId="00001" 
     amount="4.90" 
     orderAdjustmentTypeId="SHIPPING_CHARGES" 
     shipGroupSeqId="00001"
 /> 
-
-<!-- Order Adjustment -->
-
-<!-- Email Address -->
-
-<ContactMech 
-    contactMechId="CM1000" 
-    contactMechTypeId="EMAIL_ADDRESS" 
-    infoString="customer@example.com" 
-/>
-
-<PartyContactMech 
-    contactMechId="CM1000" 
-    partyId="10000"
-    fromDate="2024-02-08 18:19:08.508" 
-/>
 
 <!-- Adding Billing Address -->
 
@@ -285,28 +294,21 @@
 />
 
 <PostalAddress 
+    toName="Muskan Pahwa"
     address1="12th S St NW" 
     city="Washington" 
     contactMechId="CM1001" 
     countyGeoId="USA" 
-    createdStamp="2024-02-15 11:50:52.047" 
     postalCode="20008" 
     stateProvinceGeoId="DC" 
-    toName="Muskan Pahwa"
+    createdStamp="2024-02-15 11:50:52.047" 
 /> 
 
-<PartyContactMechPurpose 
+<OrderContactMech 
     contactMechId="CM1001" 
     contactMechPurposeTypeId="BILLING_LOCATION" 
-    fromDate="2024-02-15 00:00:00.0" 
-    partyId="10010"
+    orderId="ODR100"
 />
-
-<PartyContactMech 
-    contactMechId="CM1001" 
-    fromDate="2024-02-15 00:00:00.0" 
-    partyId="10010"
-/> 
 
 <!-- Shipping address -->
 
