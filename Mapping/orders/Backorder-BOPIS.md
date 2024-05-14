@@ -8,7 +8,9 @@
     "email": "ContactMech.infoString",
     "financial_status": "OrderPaymentPreference.statusId",
     "payment_gateway_names": [
-      {"shopify_payments": "OrderPaymentPreference.paymentMethodTypeId"}
+      {
+        "shopify_payments": "OrderPaymentPreference.paymentMethodTypeId"
+      }
     ],
     "phone": null,
     "source_name": "OrderHeader.salesChannelEnumId",
