@@ -12,6 +12,8 @@
         "shopify_payments": "OrderPaymentPreference.paymentMethodTypeId"
       }
     ],
+    "total_tax": "OrderAdjustment.amount",
+    "OrderAdjustment.orderAdjustmentTypeId": "SALES_TAX",
     "phone": null,
     "source_name": "OrderHeader.salesChannelEnumId",
     "billing_address": {
@@ -68,10 +70,9 @@
     "shipping_lines": [
       {
         "price": "OrderAdjustment.amount"
+        "OrderAdjustment.orderAdjustmentTypeId": "SHIPPING_CHARGES"
       }
     ]
-    // Additional Entities: 
-    "OrderAdjustment.orderAdjustmentTypeId": "SHIPPING_CHARGES"
   }
 }
 
