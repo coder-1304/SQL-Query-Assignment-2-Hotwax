@@ -73,9 +73,6 @@
     ]
     // Additional Entities: 
     "OrderAdjustment.orderAdjustmentTypeId": "SHIPPING_CHARGES"
-
-    "OrderItemShipGroup.shipmentMethodTypeId": "STOREPICKUP"
-    "OrderItemShipGroup.facilityId": "BACKORDER_PARKING"
   }
 }
 
