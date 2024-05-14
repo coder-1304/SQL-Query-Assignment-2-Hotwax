@@ -14,7 +14,6 @@
     ],
     "phone": null,
     "source_name": "OrderHeader.salesChannelEnumId",
-    "total_tip_received": "0.00",
     "billing_address": {
       "address1": "PostalAddress.address1",
       "phone": "TelecomNumber.contactNumber",
